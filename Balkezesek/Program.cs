@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Balkezesek
 {
@@ -10,7 +11,11 @@ namespace Balkezesek
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<beo> balekezes = new List<beo>();
+            foreach (var sor in File.ReadAllLines("balkezesek.csv").Skip(1))
+            {
+                balekezes.Add(new beo(sor));
+            }
         }
     }
 }
