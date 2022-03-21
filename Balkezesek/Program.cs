@@ -23,6 +23,29 @@ namespace Balkezesek
                 .Where(x => x.utolsopalyalepes.Year == 1999 && x.utolsopalyalepes.Month == 10)
                 .ToList()
                 .ForEach(x => Console.WriteLine("{0},{1:0.0}",x.nev,x.magassag*2.54));
+
+            Console.WriteLine($"5.feladat:");
+
+            bool boolteszt = false;
+            int bekertsz;
+            do
+            {
+            Console.WriteLine("Kérek egy 1990 és 1999 közötti számot!:");
+            bekertsz = int.Parse(Console.ReadLine());
+                if (bekertsz >= 1990 && bekertsz <= 1999)
+                {
+                    boolteszt= true;
+                    
+                }
+                else
+                {
+                    Console.Write("Hiba! ");
+                }
+            } while (boolteszt==false);
+            double atlae=balekezes.Where(x => x.elsopalyalepes.Year == bekertsz).Average(x => x.suly);
+            double atlau=balekezes.Where(x => x.utolsopalyalepes.Year == bekertsz).Average(x => x.suly);
+            double atlag = (atlae + atlau) / 2;
+            Console.WriteLine("6.feladat: {0:0.00} font",atlag);
         }
     }
 }
