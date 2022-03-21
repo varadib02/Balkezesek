@@ -16,6 +16,13 @@ namespace Balkezesek
             {
                 balekezes.Add(new beo(sor));
             }
+            Console.WriteLine($"3.feladat: {balekezes.Count}");
+
+            Console.WriteLine($"4.feladat:");
+            balekezes
+                .Where(x => x.utolsopalyalepes.Year == 1999 && x.utolsopalyalepes.Month == 10)
+                .ToList()
+                .ForEach(x => Console.WriteLine("{0},{1:0.0}",x.nev,x.magassag*2.54));
         }
     }
 }
