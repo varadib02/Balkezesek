@@ -42,10 +42,9 @@ namespace Balkezesek
                     Console.Write("Hiba! ");
                 }
             } while (boolteszt==false);
-            double atlae=balekezes.Where(x => x.elsopalyalepes.Year == bekertsz).Average(x => x.suly);
-            double atlau=balekezes.Where(x => x.utolsopalyalepes.Year == bekertsz).Average(x => x.suly);
-            double atlag = (atlae + atlau) / 2;
-            Console.WriteLine("6.feladat: {0:0.00} font",atlag);
+
+            Console.WriteLine("6.feladat: {0:0.00} font", balekezes.Where(x => x.elsopalyalepes.Year <= bekertsz && x.utolsopalyalepes.Year>=bekertsz).Average(x => x.suly));
+
         }
     }
 }
