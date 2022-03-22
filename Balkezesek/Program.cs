@@ -45,6 +45,9 @@ namespace Balkezesek
 
             Console.WriteLine("6.feladat: {0:0.00} font", balekezes.Where(x => x.elsopalyalepes.Year <= bekertsz && x.utolsopalyalepes.Year>=bekertsz).Average(x => x.suly));
 
+            player p = new player();
+            p.nev = "gd";
+            //p.tömeg = -1;
         }
     }
 }
